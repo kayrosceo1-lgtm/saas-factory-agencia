@@ -138,7 +138,7 @@ body {
 
   /* Animations */
   @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
@@ -147,9 +147,29 @@ body {
     to { opacity: 1; transform: scale(1); }
   }
 
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
   @keyframes gentleFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
   }
 
   @keyframes pulseGlow {
@@ -162,13 +182,33 @@ body {
     50% { box-shadow: 0 0 35px rgba(var(--gold-rgb), 0.5), 0 0 60px rgba(var(--gold-rgb), 0.25); }
   }
 
+  @keyframes cardReveal {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
   .animate-fadeInUp {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 
   .animate-fadeInScale {
-    animation: fadeInScale 0.5s ease-out forwards;
+    animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-cardReveal {
+    animation: cardReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 
@@ -177,21 +217,37 @@ body {
   }
 
   .animate-pulseGlow {
-    animation: pulseGlow 2s ease-in-out infinite;
+    animation: pulseGlow 2.5s ease-in-out infinite;
   }
 
   .animate-goldPulse {
     animation: goldPulse 3s ease-in-out infinite;
   }
 
+  .animate-breathe {
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  .shimmer-text {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
   /* Stagger delays */
   .delay-100 { animation-delay: 100ms; }
+  .delay-150 { animation-delay: 150ms; }
   .delay-200 { animation-delay: 200ms; }
+  .delay-250 { animation-delay: 250ms; }
   .delay-300 { animation-delay: 300ms; }
+  .delay-350 { animation-delay: 350ms; }
   .delay-400 { animation-delay: 400ms; }
+  .delay-450 { animation-delay: 450ms; }
   .delay-500 { animation-delay: 500ms; }
+  .delay-550 { animation-delay: 550ms; }
   .delay-600 { animation-delay: 600ms; }
   .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+  .delay-900 { animation-delay: 900ms; }
 
   /* Scrollbar */
   .scrollbar-hide {
