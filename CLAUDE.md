@@ -318,6 +318,22 @@ test('should calculate total with tax', () => {
 
 ---
 
+## 🚀 Despliegue Multi-Target
+
+El proyecto soporta múltiples plataformas de despliegue via la variable `DEPLOY_TARGET`:
+
+| Target | Comando de preparación | Documentación |
+|--------|----------------------|---------------|
+| Vercel (default) | `npm run prepare:vercel` | `deploy/vercel.md` |
+| EasyPanel | `npm run prepare:easypanel` | `deploy/easypanel.md` |
+
+- **Skill**: `/deploy` — la IA puede ejecutarlo para preparar el proyecto
+- **Configuración condicional**: `next.config.ts` activa `output: 'standalone'` solo cuando `DEPLOY_TARGET !== 'vercel'`
+- **Assets estáticos**: `scripts/copy-standalone-assets.js` copia `.next/static` y `public/` al standalone automáticamente via `postbuild`
+- **Cambiar de target**: ejecutar `npm run prepare:<target>` y commitear los cambios
+
+---
+
 ## 🔥 Aprendizajes (Auto-Blindaje Activo)
 
 > Esta sección CRECE con cada error encontrado.
